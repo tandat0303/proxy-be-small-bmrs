@@ -17,6 +17,17 @@ app.use(
   }),
 );
 
+app.use(
+  "/images",
+  createProxyMiddleware({
+    target: "http://erp.lacty.com.vn:8000",
+    changeOrigin: true,
+    pathRewrite: {
+      "^/images": "",
+    },
+  }),
+);
+
 app.get("/", (req, res) => {
   res.send("ERP Proxy Server Running 🚀");
 });
