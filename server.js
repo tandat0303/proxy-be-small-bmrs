@@ -4,12 +4,7 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://small-bmrs.vercel.app",
-    credentials: true,
-  }),
-);
+app.use(cors());
 
 app.use(
   "/api",
